@@ -144,15 +144,17 @@ HTTP/1.1 200（服务端已执行，读响应超时）
 
 案例 1：site-d.invalid（认证绕过 → Lua 事件 → 命令回显）
 
-> 原图未公开；本仓库不包含未打码截图。
+![认证绕过和命令回显的脱敏截图](assets/case-1-rce-redacted.png)
 
 案例 2：site-b.invalid:9443（同一绕过匿名读取 SMTP 凭据）
 
-> 原图未公开；本仓库不包含未打码截图。
+![SMTP 凭据泄露的脱敏截图](assets/case-2-smtp-redacted.png)
 
 案例 3：site-c.invalid:10443（匿名读取硬件账号口令）
 
-> 原图未公开；本仓库不包含未打码截图。
+![硬件账号凭据泄露的脱敏截图](assets/case-3-hardware-redacted.png)
+
+以上为原始截图的脱敏副本；公网地址、账号标识、口令、哈希及网络细节均已遮盖。未打码原图不包含在本仓库中。
 
 其他受影响目标：site-e.invalid:7443，200 + EmailUsername/EmailPassword/EmailServer（3922 bytes）；site-f.invalid:4443，200 + SMTP 凭据 + 硬件 Username/Password（3318/3937 bytes）；site-a.invalid，200 + EmailUsername/EmailPassword/WebLocalNetworks（3436 bytes）；site-g.invalid:4443，200 + ProwlAPI + SMTP 凭据（4196 bytes）；site-h.invalid:9443，200 + PushbulletAPI + SecPassword（4153 bytes）；site-i.invalid:9443，200 + SecPassword + 硬件 Username/Password（4104/1217 bytes）；site-j.invalid:2222，200 + SMTP 凭据 + 硬件地址（3921/7099 bytes）
 

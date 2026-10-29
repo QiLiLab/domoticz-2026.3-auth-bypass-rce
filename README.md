@@ -147,10 +147,18 @@ The default mode is read-only (`getsettings` and `gethardware`). The source repo
 ### Black-box cases
 
 1. **site-d.invalid:** authentication bypass → Lua event → command output.
+
+   ![Redacted authentication-bypass and command-output evidence](assets/case-1-rce-redacted.png)
+
 2. **site-b.invalid:9443:** the same bypass anonymously read SMTP credentials.
+
+   ![Redacted SMTP-credential disclosure evidence](assets/case-2-smtp-redacted.png)
+
 3. **site-c.invalid:10443:** anonymous reading of hardware account credentials.
 
-The three screenshots for these cases are omitted from this repository because they visibly contain unmasked third-party passwords, account identifiers, hashes, and network details.
+   ![Redacted hardware-credential disclosure evidence](assets/case-3-hardware-redacted.png)
+
+These are redacted copies of the original screenshots. Public addresses, account identifiers, passwords, hashes, and network details are obscured. The unredacted originals are not included in this repository.
 
 Other affected targets listed in the source report:
 
